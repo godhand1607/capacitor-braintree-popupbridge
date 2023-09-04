@@ -1,5 +1,9 @@
 package com.getcapacitor.plugin.braintree.popupbridge;
 
+import android.content.Context;
+import android.content.Intent;
+import android.util.Log;
+
 import com.getcapacitor.JSObject;
 import com.getcapacitor.Plugin;
 import com.getcapacitor.PluginCall;
@@ -10,6 +14,24 @@ import com.getcapacitor.annotation.CapacitorPlugin;
 public class BraintreePopupbridgePlugin extends Plugin {
 
     private BraintreePopupbridge implementation = new BraintreePopupbridge();
+
+    public void load() {
+        this.implementation.enable(
+            this.getActivity(),
+            this.bridge.getWebView(),
+            getContext().getPackageName()
+        );
+    }
+
+    @Override
+    protected void handleOnResume() {
+        this.implementation.handleOnResume(this.getActivity());
+    }
+
+    @Override
+    protected void handleOnNewIntent(Intent intent) {
+        this.implementation.handleOnNewIntent(this.getActivity(), intent);
+    }
 
     @PluginMethod
     public void echo(PluginCall call) {

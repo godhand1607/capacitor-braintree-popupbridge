@@ -8,7 +8,11 @@ import Capacitor
 @objc(BraintreePopupbridgePlugin)
 public class BraintreePopupbridgePlugin: CAPPlugin {
     private let implementation = BraintreePopupbridge()
-
+    
+    override public func load() {
+        self.implementation.enable(webView: self.webView!)
+    }
+    
     @objc func echo(_ call: CAPPluginCall) {
         let value = call.getString("value") ?? ""
         call.resolve([
