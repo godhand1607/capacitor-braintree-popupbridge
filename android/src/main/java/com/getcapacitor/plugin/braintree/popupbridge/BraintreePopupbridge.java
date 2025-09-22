@@ -26,11 +26,11 @@ public class BraintreePopupbridge {
         }
     }
 
-    // public void handleOnResume(FragmentActivity activity) {
-    //     if (this.popupBridgeClient != null) {
-    //         this.popupBridgeClient.deliverPopupBridgeResult(activity);
-    //     }
-    // }
+    public void handleOnResume(FragmentActivity activity) {
+        if (this.popupBridgeClient != null) {
+            this.popupBridgeClient.deliverPopupBridgeResult(activity);
+        }
+    }
 
     public void handleOnNewIntent(FragmentActivity activity, Intent intent) {
         // Log.i("BraintreePopupbridge", "handleOnNewIntent");

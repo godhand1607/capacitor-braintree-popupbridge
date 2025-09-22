@@ -1,6 +1,6 @@
 {
   "name": "capacitor-braintree-popupbridge",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "description": "Braintree Popupbridge Capacitor Plugin",
   "main": "dist/plugin.cjs.js",
   "module": "dist/esm/index.js",

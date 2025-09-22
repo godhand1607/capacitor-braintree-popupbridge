@@ -23,10 +23,10 @@ public class BraintreePopupbridgePlugin extends Plugin {
         );
     }
 
-    // @Override
-    // protected void handleOnResume() {
-    //     this.implementation.handleOnResume(this.bridge.getActivity());
-    // }
+    @Override
+    protected void handleOnResume() {
+        this.implementation.handleOnResume(this.bridge.getActivity());
+    }
 
     @Override
     protected void handleOnNewIntent(Intent intent) {
