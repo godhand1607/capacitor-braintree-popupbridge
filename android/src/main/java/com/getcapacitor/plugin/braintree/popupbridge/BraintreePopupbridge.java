@@ -13,8 +13,10 @@ public class BraintreePopupbridge {
     private PopupBridgeClient popupBridgeClient;
 
     public void enable(FragmentActivity activity, WebView webView, String packageName) {
-
+        // Log.i("BraintreePopupbridge", "enable");
         if (android.os.Build.VERSION.SDK_INT > android.os.Build.VERSION_CODES.P) {
+            // Log.i("BraintreePopupbridge", "enable: android.os.Build.VERSION.SDK_INT > android.os.Build.VERSION_CODES.P");
+            // Log.i("BraintreePopupbridge", "packageName: " + packageName);
             String returnUrlScheme = packageName + ".popupbridge";
 
             this.popupBridgeClient = new PopupBridgeClient(activity, webView, returnUrlScheme);
@@ -24,7 +26,15 @@ public class BraintreePopupbridge {
         }
     }
 
+    // public void handleOnResume(FragmentActivity activity) {
+    //     if (this.popupBridgeClient != null) {
+    //         this.popupBridgeClient.deliverPopupBridgeResult(activity);
+    //     }
+    // }
+
     public void handleOnNewIntent(FragmentActivity activity, Intent intent) {
+        // Log.i("BraintreePopupbridge", "handleOnNewIntent");
+        // Log.i("BraintreePopupbridge", "intent: " + intent);
         activity.setIntent(intent);
     }
 

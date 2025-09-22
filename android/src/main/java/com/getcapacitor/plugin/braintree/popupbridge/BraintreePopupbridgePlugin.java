@@ -17,15 +17,20 @@ public class BraintreePopupbridgePlugin extends Plugin {
 
     public void load() {
         this.implementation.enable(
-            this.getActivity(),
+            this.bridge.getActivity(),
             this.bridge.getWebView(),
             getContext().getPackageName()
         );
     }
 
+    // @Override
+    // protected void handleOnResume() {
+    //     this.implementation.handleOnResume(this.bridge.getActivity());
+    // }
+
     @Override
     protected void handleOnNewIntent(Intent intent) {
-        this.implementation.handleOnNewIntent(this.getActivity(), intent);
+        this.implementation.handleOnNewIntent(this.bridge.getActivity(), intent);
     }
 
     @PluginMethod
