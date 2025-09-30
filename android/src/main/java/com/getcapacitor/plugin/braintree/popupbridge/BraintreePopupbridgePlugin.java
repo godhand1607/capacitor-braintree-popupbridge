@@ -16,11 +16,11 @@ public class BraintreePopupbridgePlugin extends Plugin {
     private BraintreePopupbridge implementation = new BraintreePopupbridge();
 
     public void load() {
-        this.implementation.enable(
-            this.bridge.getActivity(),
-            this.bridge.getWebView(),
-            getContext().getPackageName()
-        );
+        // this.implementation.enable(
+        //     this.bridge.getActivity(),
+        //     this.bridge.getWebView(),
+        //     getContext().getPackageName()
+        // );
     }
 
     @Override
